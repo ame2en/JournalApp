@@ -1,0 +1,32 @@
+weather:
+  api:
+    key: "LOCAL_WEATHER_KEY"
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: "957265867251-er1mq8jm0dd9ga6022i8qc1l24nckafc.apps.googleusercontent.com"
+            client-secret: "957265867251-er1mq8jm0dd9ga6022i8qc1l24nckafc.apps.googleusercontent.com"
+  redis:
+    data:
+      host: localhost
+      port: 6379
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/journaldb
+  mail:
+    username: "dummy@gmail.com"
+    password: "dummypassword"
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      security:
+        protocol: PLAINTEXT # Use local plaintext for easier setup
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: null # Disable SASL for local
+server:
+  port: 8081
