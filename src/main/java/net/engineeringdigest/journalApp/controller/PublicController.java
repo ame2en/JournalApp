@@ -39,11 +39,11 @@ public class PublicController {
 
     @PostMapping("/signup")
     public void signup(@RequestBody UserDTO user) {
-        User newUser = new User();
-        newUser.setEmail(user.getEmail());
-        newUser.setUserName(user.getUserName());
-        newUser.setPassword(user.getPassword());
-        newUser.setSentimentAnalysis(user.isSentimentAnalysis());
+        User newUser = User.builder()
+                .userName(user.getUserName())
+                .email(user.getEmail())
+                .password(user.getPassword())
+                .sentimentAnalysis(user.isSentimentAnalysis());
         userService.saveNewUser(newUser);
     }
 
